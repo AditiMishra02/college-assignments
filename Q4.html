@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+				initial-scale=1.0">
+    
+    <style>
+        h1 {
+            color: rgb(128, 47, 0);
+        }
+
+        .container {
+            padding: 15px;
+            width: 400px;
+        }
+
+        label,
+        input {
+            margin-bottom: 10px;
+        }
+
+        button {
+            float: right;
+            margin-right: 10px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>INFORMATION</h1>
+        <b>Display error without alert box</b>
+        <br><br>
+        <div class="container">
+            <div>
+                <label>Name:</label>
+                <input type="text" size="40">
+            </div>
+            <div>
+                <label>Phone no:</label>
+                <input type="text" id="number" size="40">
+                <span id="error"></span>
+            </div>
+            <button type="submit" onclick="errorMessage()">
+                Submit
+            </button>
+        </div>
+    </center>
+</body>
+<script>
+    function errorMessage() {
+        var error = document.getElementById("error")
+        if (isNaN(document.getElementById("number").value)) {
+
+            // Changing HTML to draw attention
+            error.innerHTML = "<span style='color: red;'>" +
+                "Please enter a valid number</span>"
+        } else {
+            error.innerHTML = ""
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            margin-left: 20%;
+        }
+
+        table,
+        th,
+        td {
+            border: 5px solid bisque;
+            border-collapse: collapse;
+            width: 80%;
+            text-align: left;
+            padding: 5px;
+            color: black;
+        }
+
+        table {
+            background-color:chocolate;
+        }
+
+        tr:hover {
+            background-color: lightsalmon;
+        }
+
+        input[type=text] {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 12px 0;
+            display: inline-block;
+            border: 5px solid tomato;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: chartreuse;
+            color: black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#search").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="search" placeholder="Search">
+        <br>
+        <br>
+        <table>
+            <tr>
+
+                <th>NAME</th>
+                <th>JOB TITLE</th>
+            </tr>
+            <tr>
+
+                <td>RIZWAN</td>
+                <td>Advocate</td>
+            </tr>
+            <tr>
+                <td>SUKRITI VERMA</td>
+                <td>Financial Advisor</td>
+            </tr>
+            <tr>
+                <td>KUSHI KHEMKA </td>
+                <td>Data Scientist</td>
+            </tr>
+            <tr>
+                <td>MARIA THOMSON</td>
+                <td>Android Developer</td>
+            </tr>
+            <tr>
+                <td>ANDREW NG</td>
+                <td>ML Researcher</td>
+            </tr>
+            <tr>
+                <td>KRUTIKA SHARMA</td>
+                <td>Chief Marketing Officer</td>
+            </tr>
+            <tr>
+                <td>ROHIT SARRAF</td>
+                <td>Actor</td>
+            </tr>
+            <tr>
+                <td>SUDHANSHU KUMAR</td>
+                <td>Bank Manager</td>
+            </tr>
+            <tr>
+                <td>SHRUTI SAHAY</td>
+                <td>Oncologist</td>
+            </tr>
+            <tr>
+                <td>ROHIT KUMAR</td>
+                <td>UI/UX Designer</td>
+            </tr>
+            <tr>
+                <td>SOMANTA SINGH</td>
+                <td> IT Manager</td>
+
+
+            </tr>
+            <tr>
+                <td>MOHIT MISHRA</td>
+                <td>Software Engineer</td>
+            </tr>
+            <tr>
+                <td>RAJAT GUPTA</td>
+                <td>Cinematographer</td>
+            </tr>
+            </tr>
+            <tr>
+                <td>MEENKA SINGH</td>
+                <td>Web Developer</td>
+            </tr>
+            <tr>
+                <td>MAYANK ROUT</td>
+                <td>Business Analyst</td>
+            </tr>
+            <tr>
+                <td>VIVEK MITRA</td>
+                <td>Graphic Designer</td>
+            </tr>
+            <tr>
+                <td>SUDHANSHU SINGH</td>
+                <td>Mechanical Engineer</td>
+            </tr>
+            <tr>
+                <td>SHUBHAM DAS</td>
+                <td>IOS Developer</td>
+            </tr>
+            <tr>
+                <td>PRIYA BISWAS</td>
+                <td>Interior Designer</td>
+            </tr>
+            <tr>
+                <td>GURPREET KAUR</td>
+                <td>Journalist</td>
+            </tr>
+            <tr>
+                <td>SHUBHAM SINGH</td>
+                <td>Sound Artist</td>
+            </tr>
+
+
+
+
+        </table>
+    </div>
+</body>
+
+</html>
