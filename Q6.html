@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <style>
+        table,
+        th,
+        td {
+            border: 3px solid chocolate;
+            border-collapse: collapse;
+            padding: 20px 20px;
+            margin-left: 40%;
+        }
+
+        tr:nth-child(odd) {
+            background-color: skyblue;
+            color: blue;
+        }
+
+        tr:nth-child(even) {
+            background-color: violet;
+            color: lime;
+        }
+
+        input {
+            padding: 5px;
+            display: block;
+            background-color: yellow;
+            color: royalblue;
+        }
+
+        button {
+            padding: 7px;
+            border: none;
+        }
+
+        .inputdiv {
+            display: flex;
+            margin-left: 490px;
+            padding: 10px 10px;
+        }
+
+        .btns {
+            margin-left: 45%;
+        }
+
+        .submit {
+            background-color: black;
+            color: red;
+        }
+
+        .color {
+            background-color: black;
+            color: hotpink;
+        }
+
+        .remove {
+            margin-left: 45%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .removebtn {
+            margin-left: 50px;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: indigo;
+            color: lime;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var val;
+        $(document).ready(function () {
+            $(".submit").click(function () {
+                var no = $(".no").val();
+                var name = $(".name").val();
+                var capital = $(".capital").val();
+                if (!no || !name || !capital) {
+                    alert("Please Fill the form correctly");
+                }
+                else {
+                    $("table").append(`<tr><td>${no}</td><td>${name}</td><td>${capital}</td></tr>`);
+                }
+            });
+            $(".color").click(function () {
+                $("tr").css("color", "gold");
+            });
+            $(".removebtn").click(function () {
+                var dels = $("#" + $("#Ids").val());
+                dels.remove();
+                console.log("Hello");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>S.l.No.</th>
+                <th>Country</th>
+                <th>Capital</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>India</td>
+                <td>New Delhi</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>USA</td>
+                <td>Washington,D.C.</td>
+            </tr>
+        </table>
+        <div class="inputdiv">
+            <input class="no" placeholder="Enter Serial Number" type="number">
+            <input class="name" placeholder="Enter Country Name" type="text">
+            <input class="capital" placeholder="Enter Capital" type="text">
+        </div>
+        <div class="btns">
+            <button class="submit">Submit</button>
+            <button class="color">Change Text Color</button>
+        </div>
+
+        <div class="remove">
+            <input id="Ids" type="number" placeholder="Enter the SL.NO.">
+            <button class="removebtn">Remove</button>
+        </div>
+    </div>
+</body>
+
+</html>
