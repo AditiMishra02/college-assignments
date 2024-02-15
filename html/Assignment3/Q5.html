@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Q5</title>
+  <style>
+    .dv {
+      border: 1px solid lime;
+      width: 100px;
+      height: 100px;
+      background-color: purple;
+      color: greenyellow;
+      text-align: center;
+      font-size: 20px;
+      margin-left: 45%;
+    }
+
+    button {
+      padding: 20px 50px;
+      background-color: orange;
+      color: blue;
+
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".dv").slideUp();
+      $(".btn1").click(function () {
+        $(".dv").slideDown();
+      });
+      $(".btn2").click(function () {
+        $(".dv").animate({
+          left: "500px",
+          height: "300px",
+          width: "300px",
+        });
+      });
+      $(".btn3").click(function () {
+        $(".dv").fadeIn(4000);
+      });
+      $(".btn4").click(function () {
+        $(".dv").hide();
+      });
+      $(".btn5").click(function () {
+        $(".dv").show();
+      });
+      $(".btn6").mouseenter(function () {
+        alert("Mouse-Entered")
+      });
+      $(".btn7").dblclick(function () {
+        $(".dv").hide();
+      });
+      $(".btn8").mouseleave(function () {
+        alert("Mouse-Left")
+      });
+      $(".btn9").click(function () {
+        alert($("#go").attr("href"))
+      });
+      $(".btn10").click(function () {
+        alert("HTML: " + $(".dv").html());
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="dv">
+    <p>HELLO</p>
+  </div>
+  <button class="btn1">slideDown</button>
+  <button class="btn2">animate</button>
+  <button class="btn3">fadeIn</button>
+  <button class="btn4">hide</button>
+  <button class="btn5">show</button>
+  <button class="btn6">mouseenter</button>
+  <button class="btn7">dblclick</button>
+  <button class="btn8">mouseleave</button>
+  <button class="btn9">attr</button>
+  <a href="https://www.google.co.in/" id="go"></a>
+  <button class="btn10">html</button>
+</body>
+
+</html>

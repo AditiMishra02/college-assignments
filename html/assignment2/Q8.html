@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <style>
+      input[type=text] {
+       width: 100%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       box-sizing: border-box;
+       border: none;
+       border-bottom: 2px solid rgb(224, 17, 17  );
+      }
+
+      input[type=text]:focus {
+	   border: none;
+	   border-bottom: 2px solid rgb(240, 15, 15);
+	  }
+
+	  input[type=submit] {
+	   background-color: #12a4e7;
+	   color: rgb(189, 228, 18);
+	   padding: 14px 20px;
+	   margin: 8px 0;
+	   border: none;
+	   border-radius: 4px;
+	   cursor: pointer;
+	  }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div>
+		<br>
+      <form>
+        <label for="name">First Name</label>
+        <input
+          type="text"
+          id="fName"
+          name="firstname"
+          placeholder="First Name"
+        />
+
+        <label for="name">Last Name</label>
+        <input type="text" id="lName" name="lastname" placeholder="Last Name" />
+
+        <label for="dept">Department</label>
+        <input type="text" id="dept" name="dept" placeholder="Department" />
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email" />
+
+        <label for="city">City</label>
+        <select id="city" name="city">
+          <option value="Houston">L.A</option>                 
+          <option value="">Florida</option>
+          <option value="Austin">Atlanta</option>
+        </select>
+		<br>
+		
+        <input  type="submit" value="Confirm" />
+      </form>
+    </div>
+  </body>
+</html>

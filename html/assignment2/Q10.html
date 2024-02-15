@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <style>
+
+		form{
+			width: 80%;
+			
+		}
+
+		label,input{
+			display: inline-block;
+		}
+
+		label{
+			width: 10%;
+		
+		}
+		body{
+			background-color: grey;
+		}
+		select{
+			width: 207px;
+		}
+      select,
+      input {
+        border: 2px solid blue;
+        padding: 12px 20px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        background-color: orange;
+        color: white;
+		border: none;
+        padding: 14px 20px;
+        margin-left: 45px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <img style="margin-left : 106px;" src="https://images.squarespace-cdn.com/content/v1/57713a8e2994cae381dd86fe/1510405002757-FP2W9HV8ZA0HP2IF3O6A/SOA-PNG.png" height="50px" width="50px"/>
+      <p style="margin-left: 96px;"><b>Registration</b></p>
+      <form>
+        <label for="name">First Name : </label>
+        <input
+          type="text"
+          id="fName"
+          name="firstname"
+          placeholder="Enter name..."
+        />
+        <br />
+        <br />
+        <label for="email">Email : </label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Enter email..."
+        />
+        <br /><br />
+        <label for="mobile">Mobile : </label>
+        <input
+          type="number"
+          id="mobile"
+          name="mobile"
+          placeholder="Enter Mobile No..."
+        />
+        <br />
+        <br />
+        <label for="gender">Gender : </label>
+        <input type="radio" id="Male">
+		<label for="Male">Male</label>
+		<input type="radio" id="Female">
+		<label for="Female">Female</label>
+
+        <br />
+        <br />
+        <label for="city">City : </label>
+        <select>
+		  <option value="" disabled selected>Select City:</option>
+          <option value="Houston">Houston</option>
+          <option value="Dallas">Dallas</option>
+          <option value="Austin">Austin</option>
+        </select>
+
+        <br />
+        <br />
+        
+        <input
+          type="submit"
+          value="Sign Up"
+          style="text-align: center; width: 240px"
+        />
+      </form>
+    </div>
+  </body>
+</html>
+

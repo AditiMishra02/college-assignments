@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q9</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color:bisque;
+            color: royalblue;
+            font-style: italic;
+            font-size: 50px;
+        }
+
+        button {
+            display: inline;
+            margin-left: 16%;
+            margin-top: 10%;
+            font-style: italic;
+        }
+
+        #s {
+            background-color: palegoldenrod;
+            color: black;
+            font-size: 30px;
+            padding: 20px 25px;
+            border: none;
+
+        }
+
+        #r {
+            background-color:violet;
+            color: darkgreen;
+            font-size: 30px;
+            padding: 20px 25px;
+            border: none;
+        }
+
+        #p {
+            background-color: indigo;
+            color:wheat;
+            font-size: 30px;
+            padding: 20px 25px;
+            border: none;
+        }
+
+        #d {
+            text-align: center;
+            background-color:navajowhite;
+            color: mediumseagreen;
+            width: 500px;
+            margin-left: 33%;
+            font-size: 50px;
+            padding: 20px 25px;
+            font-family: arial;
+            font-style: oblique;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var w = 0, l = 0, turn = 0;
+            $("#s").click(function () {
+                if (choice() == "Scissors") {
+                    $("#d").text("TIE");
+                    turn++;
+                }
+                else if (choice() == "Paper") {
+                    $("#d").text("SCISSORS WON");
+                    if (turn < 10) {
+                        w++;
+                        turn++;
+                    }
+                }
+                else if (choice() == "Rock") {
+                    $("#d").text("SCISSORS LOST");
+                    if (turn < 10) {
+                        l++;
+                        turn++;
+                    }
+                }
+                $("#d").text("YOU WON " + w + " TIMES AND COMPUTER WON " + l + " TIMES");
+                if (turn == 10) {
+                    if (w > l)
+                        alert("YOU WON");
+                    else
+                        alert("YOU LOST");
+                    w = 0;
+                    l = 0;
+                    turn = 0;
+                }
+            });
+            $("#r").click(function () {
+                if (choice() == "Rock") {
+                    $("#d").text("TIE");
+                    turn++;
+                }
+                else if (choice() == "Scissors") {
+                    $("#d").text("ROCK WON");
+                    if (turn < 10) {
+                        w++;
+                        turn++;
+                    }
+                }
+                else if (choice() == "Paper") {
+                    $("#d").text("ROCK LOST");
+                    if (turn < 10) {
+                        l++;
+                        turn++;
+                    }
+                }
+
+                $("#d").text("YOU WON " + w + " TIMES AND COMPUTER WON " + l + " TIMES");
+                if (turn == 10) {
+                    if (w > l)
+                        alert("YOU WON");
+                    else
+                        alert("YOU LOST");
+                    w = 0;
+                    l = 0;
+                    turn = 0;
+                }
+            });
+            $("#p").click(function () {
+                if (choice() == "Paper") {
+
+                    $("#d").text("TIE");
+                    turn++;
+
+                }
+                else if (choice() == "Scissors") {
+                    $("#d").text("PAPER LOST");
+                    if (turn < 10) {
+                        l++;
+                        turn++;
+                    }
+                }
+                else if (choice() == "Rock") {
+                    $("#d").text("PAPER WON");
+                    if (turn < 10) {
+                        w++;
+                        turn++;
+                    }
+                }
+
+                $("#d").text("YOU WON " + w + " TIMES AND COMPUTER WON " + l + " TIMES");
+                if (turn == 10) {
+                    if (w > l)
+                        alert("YOU WON");
+                    else
+                        alert("YOU LOST");
+                    w = 0;
+                    l = 0;
+                    turn = 0;
+                }
+            });
+            var choice = function () {
+                var random = Math.random();
+                if (random < 0.33)
+                    return "Scissors";
+                else if (random >= 0.33 && random < 0.66)
+                    return "Paper";
+                else
+                    return "Rock";
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <h1><b>ROCK-PAPER-SCISSOR</b></h1>
+    <button id="s"><b>SCISSORS</b></button>
+    <button id="r"><b>ROCK</b></button>
+    <button id="p"><b>PAPER</b></button>
+    <p id="d"></p>
+</body>
+
+</html>

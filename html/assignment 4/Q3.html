@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/static/upload.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('form').on('submit', function (event) {
+
+                event.preventDefault();
+
+                var formData = new FormData($('form')[0]);
+
+                $.ajax({
+                    xhr: function () {
+                        var xhr = new window.XMLHttpRequest();
+
+                        xhr.upload.addEventListener('progress', function (e) {
+
+                            if (e.lengthComputable) {
+
+                                console.log('Bytes Loaded: ' + e.loaded);
+                                console.log('Total Size: ' + e.total);
+                                console.log('Percentage Uploaded: ' + (e.loaded / e.total))
+
+                                var percent = Math.round((e.loaded / e.total) * 100);
+
+                                $('#progressBar').attr('aria-valuenow', percent).css('width', percent + '%').text(percent + '%');
+
+                            }
+
+                        });
+
+                        return xhr;
+                    },
+                    type: 'POST',
+                    url: '/upload',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function () {
+                        alert('File uploaded!');
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+        <input type=file id="media" name=media>
+        <input type="submit">
+    </form>
+
+    <div class="progress">
+        <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+            aria-valuemax="100" style="width: 0%;">
+            0%
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
